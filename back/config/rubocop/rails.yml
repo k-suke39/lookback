@@ -62,4 +62,4 @@ Rails/UnknownEnv:
     - production # rubocop default.yml
 
 Rails/WhereExists:
-  Enabled: falses
+  Enabled: false
