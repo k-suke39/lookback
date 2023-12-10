@@ -11,12 +11,12 @@ services:
       - '3307:3306'
     volumes:
       - mysql_data:/var/lib/mysql
-  rails:
+  back:
     build:
-      context: ./rails
+      context: ./back
     command: bash -c "bundle exec rails s -b '0.0.0.0'"
     volumes:
-      - ./rails:/myapp
+      - ./back:/myapp
     ports:
       - 3000:3000
     depends_on:
