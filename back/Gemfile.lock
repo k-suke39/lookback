@@ -67,6 +67,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
     ast (2.4.2)
+    bcrypt (3.1.20)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -79,6 +80,18 @@ GEM
     crass (1.0.6)
     date (3.3.4)
     deep_merge (1.2.2)
+    devise (4.9.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+    devise-i18n (1.12.0)
+      devise (>= 4.9.0)
+    devise_token_auth (1.2.2)
+      bcrypt (~> 3.0)
+      devise (> 3.5.2, < 5)
+      rails (>= 4.2.0, < 7.1)
     diff-lcs (1.5.0)
     dry-configurable (1.1.0)
       dry-core (~> 1.0, < 2)
@@ -147,6 +160,7 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -201,6 +215,9 @@ GEM
     rainbow (3.1.1)
     rake (13.1.0)
     regexp_parser (2.8.3)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.6)
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
@@ -254,6 +271,8 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -266,6 +285,9 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   config
+  devise
+  devise-i18n
+  devise_token_auth
   mysql2 (~> 0.5)
   pry-byebug
   pry-doc
