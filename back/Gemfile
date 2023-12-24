@@ -30,6 +30,8 @@ gem "letter_opener_web"
 
 gem "active_model_serializers"
 
+gem "rails-i18n"
+
 group :development, :test do
   gem "pry-byebug"
   gem "pry-doc"
