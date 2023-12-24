@@ -314,12 +314,9 @@ DEPENDENCIES
   devise
   devise-i18n
   devise_token_auth
-<<<<<<< HEAD
   factory_bot_rails
   faker
-=======
   letter_opener_web
->>>>>>> feature/devise-token-auth
   mysql2 (~> 0.5)
   pry-byebug
   pry-doc
