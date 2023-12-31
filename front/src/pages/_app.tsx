@@ -3,6 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { AppProps } from 'next/app';
 import '@/styles/destyle.css';
+import CurrentUserFetch from '@/components/CurrentUserFetch';
 import Header from '@/components/Header';
 
 import createEmotionCache from '@/styles/createEmotionCache';
@@ -20,6 +21,7 @@ export default function MyApp(props: MyAppProps): JSX.Element {
 		<CacheProvider value={emotionCache}>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
+				<CurrentUserFetch />
 				<Header />
 				<Component {...pageProps} />
 			</ThemeProvider>
