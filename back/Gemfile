@@ -35,6 +35,8 @@ gem "rails-i18n"
 gem "kaminari"
 
 gem "bullet"
+
+gem "enum_help"
 group :development, :test do
   gem "factory_bot_rails"
   gem "faker"
