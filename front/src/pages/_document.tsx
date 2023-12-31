@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 					/>
 				</Head>
-				<body className="px-4 py-10 bg-gray-50 bg-[url('/grid.svg')]">
+				<body className="bg-[url('/grid.svg')]">
 					<Main />
 					<NextScript />
 				</body>
