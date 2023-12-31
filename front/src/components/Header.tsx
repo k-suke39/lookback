@@ -25,19 +25,21 @@ const Header = () => {
 						<Link href="/">Lookback</Link>
 					</Box>
 					<Box>
-						<Button
-							color="inherit"
-							variant="outlined"
-							sx={{
-								textTransform: 'none',
-								fontSize: 16,
-								boxShadow: 'none',
-								border: '1px solid',
-								ml: 2,
-							}}
-						>
-							ログイン
-						</Button>
+						<Link href="/sign_in">
+							<Button
+								color="inherit"
+								variant="outlined"
+								sx={{
+									textTransform: 'none',
+									fontSize: 16,
+									boxShadow: 'none',
+									border: '1px solid',
+									ml: 2,
+								}}
+							>
+								ログイン
+							</Button>
+						</Link>
 						<Button
 							color="inherit"
 							variant="outlined"
