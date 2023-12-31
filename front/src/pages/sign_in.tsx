@@ -75,7 +75,7 @@ const SignIn: NextPage = () => {
 						component="h2"
 						sx={{ fontSize: 32, color: 'black', fontWeight: 'bold' }}
 					>
-						Sign in
+						ログイン
 					</Typography>
 				</Box>
 				<Stack component="form" onSubmit={handleSubmit(onSubmit)} spacing={4}>
