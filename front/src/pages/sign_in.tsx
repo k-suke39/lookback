@@ -62,6 +62,19 @@ const SignIn: NextPage = () => {
 				console.log(e.message);
 			});
 	};
+	const validationRules = {
+		email: {
+			required: 'メールアドレスを入力してください。',
+			pattern: {
+				value:
+					/^[a-zA-Z0-9_+-]+(.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/,
+				message: '正しい形式のメールアドレスを入力してください。',
+			},
+		},
+		password: {
+			required: 'パスワードを入力してください。',
+		},
+	};
 
 	return (
 		<Box
@@ -82,24 +95,28 @@ const SignIn: NextPage = () => {
 					<Controller
 						name="email"
 						control={control}
-						render={({ field }) => (
+						rules={validationRules.email}
+						render={({ field, fieldState }) => (
 							<DefaultTextField
 								{...field}
 								type="text"
 								label="メールアドレス"
-								sx={{ backgroundColor: 'white' }}
+								error={fieldState.invalid}
+								helperText={fieldState.error?.message}
 							/>
 						)}
 					/>
 					<Controller
 						name="password"
 						control={control}
-						render={({ field }) => (
+						rules={validationRules.password}
+						render={({ field, fieldState }) => (
 							<DefaultTextField
 								{...field}
 								type="password"
 								label="パスワード"
-								sx={{ backgroundColor: 'white' }}
+								error={fieldState.invalid}
+								helperText={fieldState.error?.message}
 							/>
 						)}
 					/>
