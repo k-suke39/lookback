@@ -7,9 +7,11 @@ import {
 	Stack,
 	styled,
 } from '@mui/material';
+import LoadingButton from '@mui/lab/LoadingButton';
 import axios, { AxiosResponse, AxiosError } from 'axios';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 
 const DefaultTextField = styled(TextField)({
@@ -42,12 +44,14 @@ type SignInFormData = {
 
 const SignIn: NextPage = () => {
 	const router = useRouter();
+	const [isLoading, setIsLoading] = useState(false);
 
 	const { handleSubmit, control } = useForm<SignInFormData>({
 		defaultValues: { email: '', password: '' },
 	});
 
 	const onSubmit: SubmitHandler<SignInFormData> = (data) => {
+		setIsLoading(true);
 		const url = process.env.NEXT_PUBLIC_API_BASE_URL + '/auth/sign_in';
 		const headers = { 'Content-Type': 'application/json' };
 
@@ -60,6 +64,7 @@ const SignIn: NextPage = () => {
 			})
 			.catch((e: AxiosError<{ error: string }>) => {
 				console.log(e.message);
+				setIsLoading(false);
 			});
 	};
 	const validationRules = {
